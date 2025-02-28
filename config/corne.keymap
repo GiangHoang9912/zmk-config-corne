@@ -1,6 +1,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 &led_strip {
     chain-length = <0>;
@@ -77,67 +81,67 @@
 &kp ESCAPE        &kp Q               &kp W           &kp F         &kp P        &kp B        &kp J        &kp L            &kp U         &kp Y    &kp SQT    &kp ESCAPE
 &kp LSHIFT        &mt LEFT_COMMAND A  &mt LEFT_ALT R  &mt LCTRL S   &mt LSHFT T  &kp G        &kp M        &kp N            &kp E         &kp I    &kp O      &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &kp Z               &kp X           &kp C         &kp D        &kp V        &kp K        &kp H            &kp COMMA     &kp DOT  &kp SLASH  &kp RCTRL
-                                                      &kp LEFT_GUI  &lt 2 SPACE  &lt 4 TAB    &lt 1 ENTER  &lt 5 BACKSPACE  &lt 3 DELETE
-            >;
-        };
-
-        symbols_layer {
-            label = "symb";
-            bindings = <
-&trans   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5       &kp N6            &kp N7             &kp N8          &kp N9           &kp N0         &trans
-&kp ESC  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR       &trans
-&trans   &kp GRAVE  &kp TILDE  &kp PIPE  &kp EQUAL  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH  &trans
-                               &trans    &trans     &trans       &trans            &trans             &trans
-            >;
-        };
-
-        nav_layer {
-            label = "nav";
-            bindings = <
-&kp LG(LC(TAB))  &trans  &kp LG(LEFT_BRACKET)  &kp LS(TAB)        &kp TAB          &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)       &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
-&kp ESC          &trans  &trans                &kp K_SCROLL_DOWN  &kp K_SCROLL_UP  &trans                   &kp LEFT           &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
-&trans           &trans  &kp HOME              &kp PG_DN          &kp PG_UP        &kp END                  &kp LG(LEFT)       &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
-                                               &trans             &trans           &trans                   &kp LC(LG(SPACE))  &trans        &trans
-            >;
-        };
-
-        func_layer {
-            label = "func";
-            bindings = <
-&trans    &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6                &kp F7                &kp F8  &kp F9  &kp F10  &kp F12
-&kp K_PP  &kp K_PREV    &kp K_NEXT    &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &trans  &trans   &trans
-&trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans                &trans                &trans  &trans  &trans   &trans
-                                      &trans        &trans        &trans          &trans                &trans                &trans
-            >;
-        };
-
-        mouse_layer {
-            label = "mouse";
-            bindings = <
-&trans   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5       &kp N6            &kp N7             &kp N8          &kp N9           &kp N0         &trans
-&kp ESC  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR       &trans
-&trans   &kp GRAVE  &kp TILDE  &kp PIPE  &kp EQUAL  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH  &trans
-                               &trans    &trans     &trans       &trans            &trans             &trans
-            >;
-        };
-
-        num_layer {
-            label = "num";
-            bindings = <
-&trans   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5       &kp N6            &kp N7             &kp N8          &kp N9           &kp N0         &trans
-&kp ESC  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR       &trans
-&trans   &kp GRAVE  &kp TILDE  &kp PIPE  &kp EQUAL  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH  &trans
-                               &trans    &trans     &trans       &trans            &trans             &trans
+                                                      &lt 1 ESCAPE  &lt 2 SPACE  &lt 5 TAB    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DELETE
             >;
         };
 
         media_layer {
             label = "media";
             bindings = <
-&trans   &kp N1     &kp N2     &kp N3    &kp N4     &kp N5       &kp N6            &kp N7             &kp N8          &kp N9           &kp N0         &trans
-&kp ESC  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR       &trans
-&trans   &kp GRAVE  &kp TILDE  &kp PIPE  &kp EQUAL  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH  &trans
-                               &trans    &trans     &trans       &trans            &trans             &trans
+&kp ESC         &trans  &trans  &trans        &trans       &trans       &kp R         &kp M           &kp H              &kp S            &kp V           &kp ESCAPE
+&kp LEFT_SHIFT  &trans  &trans  &trans        &trans       &trans       &kp E         &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kt K_PREVIOUS  &kp RIGHT_SHIFT
+&kp RCTRL       &trans  &trans  &trans        &trans       &trans       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4    &kp LCTRL
+                                &lt 1 ESCAPE  &lt 2 SPACE  &lt 5 TAB    &lt 3 C_STOP  &lt 6 C_PLAY    &lt 4 K_MUTE
+            >;
+        };
+
+        nav_layer {
+            label = "nav";
+            bindings = <
+&kp ESC         &trans  &trans  &trans        &trans       &trans       &kp K_REDO   &kp K_PASTE      &kp K_COPY      &kp K_CUT     &kp K_UNDO       &kp ESC
+&kp LEFT_SHIFT  &trans  &trans  &trans        &trans       &trans       &kp CAPS     &kp LEFT_ARROW   &kt DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RIGHT_SHIFT
+&kp LCTRL       &trans  &trans  &trans        &trans       &trans       &kp INS      &kp HOME         &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp RCTRL
+                                &lt 1 ESCAPE  &lt 2 SPACE  &lt 5 TAB    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 6 DELETE
+            >;
+        };
+
+        symbols_layer {
+            label = "symb";
+            bindings = <
+&kp ESC     &kp LBRC   &kp AMPS  &kp STAR                &kp LPAR                 &kp RBRC       &trans       &trans           &trans        &trans  &trans  &trans
+&kp LSHIFT  &kp COLON  &kp DLLR  &kp PRCNT               &kp CARET                &kp PLUS       &trans       &trans           &trans        &trans  &trans  &trans
+&kp LCTRL   &kp TILDE  &kp EXCL  &kp AT                  &kp HASH                 &kp PIPE       &trans       &trans           &trans        &trans  &trans  &trans
+                                 &lt 1 LEFT_PARENTHESIS  &lt 2 RIGHT_PARENTHESIS  &lt 5 UNDER    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DELETE
+            >;
+        };
+
+        func_layer {
+            label = "func";
+            bindings = <
+&kp ESC     &kp F12  &kp F7  &kp F8     &kp F9       &kp PRINTSCREEN    &trans       &trans           &trans     &trans  &trans  &kp ESC
+&kp LSHIFT  &kp F10  &kp F4  &kp F5     &kp F6       &kp SCROLLLOCK     &trans       &trans           &trans     &trans  &trans  &kp RSHIFT
+&kp LCTRL   &kp F10  &kp F1  &kp F2     &kp F3       &kp PAUSE_BREAK    &trans       &trans           &trans     &trans  &trans  &kp RCTRL
+                             &lt 1 ESC  &lt 2 SPACE  &lt 5 TAB          &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DEL
+            >;
+        };
+
+        mouse_layer {
+            label = "mouse";
+            bindings = <
+&kp ESC     &trans  &trans  &trans     &trans       &trans       &kp K_REDO  &kp K_PASTE     &kp K_COPY       &kp K_CUT     &kp K_UNDO      &kp ESC
+&kp LSHIFT  &trans  &trans  &trans     &trans       &trans       &trans      &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_UP  &mmv MOVE_LEFT  &kp RSHIFT
+&kp LCTRL   &trans  &trans  &trans     &trans       &trans       &trans      &trans          &trans           &trans        &trans          &kp RCTRL
+                            &lt 1 ESC  &lt 2 SPACE  &lt 5 TAB    &mkp RCLK   &mkp LCLK       &msc MOVE_X(15)
+            >;
+        };
+
+        num_layer {
+            label = "num";
+            bindings = <
+&kp ESC     &kp LBKT   &kp N7  &kp N8     &kp N9    &kp RBKT       &trans       &trans           &trans     &trans  &trans  &kp ESC
+&kp LSHIFT  &kp SEMI   &kp N4  &kp N5     &kp N6    &kp EQUAL      &trans       &trans           &trans     &trans  &trans  &kp RSHIFT
+&kp LCTRL   &kp GRAVE  &kp N1  &kp N2     &kp N3    &kp BSLH       &trans       &trans           &trans     &trans  &trans  &kp RCTRL
+                               &lt 1 DOT  &lt 2 N0  &lt 5 MINUS    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DEL
             >;
         };
     };
