@@ -20,10 +20,10 @@ layers:
   - {t: T, h: LSHFT}
   - G
   - M
-  - N
-  - E
-  - I
-  - O
+  - {t: N, h: RSHIFT}
+  - {t: E, h: RCTRL}
+  - {t: I, h: RIGHT ALT}
+  - {t: O, h: RIGHT COMMAND}
   - RIGHT SHIFT
   - LEFT CONTROL
   - Z
@@ -57,10 +57,10 @@ layers:
   - V
   - ESCAPE
   - LEFT SHIFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LEFT COMMAND
+  - LEFT ALT
+  - LEFT CONTROL
+  - LSHIFT
   - {t: ▽, type: trans}
   - E
   - PREVIOUS
@@ -100,10 +100,10 @@ layers:
   - UNDO
   - ESC
   - LEFT SHIFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
   - {t: ▽, type: trans}
   - CAPS
   - LEFT ARROW
@@ -128,7 +128,7 @@ layers:
   - {t: TAB, h: mouse}
   - {t: ENTER, h: symb}
   - {t: BACKSPACE, h: num}
-  - {t: DELETE, h: num}
+  - {t: DELETE, h: func}
   symb:
   - ESC
   - '{'
@@ -141,7 +141,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ESC
   - LSHIFT
   - ':'
   - $
@@ -149,11 +149,11 @@ layers:
   - ^
   - +
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RSHFT
+  - RCTRL
+  - RALT
+  - RGUI
+  - RSHFT
   - LCTRL
   - '~'
   - '!'
@@ -165,7 +165,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RCTRL
   - {t: (, h: media}
   - {t: ), h: nav}
   - {t: _, h: mouse}
@@ -192,10 +192,10 @@ layers:
   - F6
   - SCROLLLOCK
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RSHFT
+  - RCTRL
+  - RALT
+  - RGUI
   - RSHIFT
   - LCTRL
   - F10
@@ -229,10 +229,10 @@ layers:
   - UNDO
   - ESC
   - LSHIFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mmv MOVE_LEFT'
@@ -278,10 +278,10 @@ layers:
   - '6'
   - '='
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RSHFT
+  - RCTRL
+  - RALT
+  - RGUI
   - RSHIFT
   - LCTRL
   - '`'
