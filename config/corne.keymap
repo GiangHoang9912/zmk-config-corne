@@ -13,7 +13,8 @@
     // 21 backlight + 6 glowlight
 };
 
-#define TAPPING_TERM 200
+#define TAPPING_TERM 300
+#define QUICK_TAP_TERM 175
 
 / {
     behaviors {
@@ -29,6 +30,31 @@
             #binding-cells = <0>;
             tapping-term-ms = <TAPPING_TERM>;
             bindings = <&kp LG(LC(Q))>, <&kp LG(LA(C_EJECT))>;
+        };
+
+        /* Custom hold-tap behavior for home row mods */
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0>;  // only consider hold if other keys are pressed
+            require-prior-idle-ms = <125>;     // helps prevent accidental triggers when rolling keys quickly
+        };
+
+        /* Custom layer-tap behavior */
+        lt_mod: layer_tap_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_MOD";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+            retro-tap;  // key is pressed when released after hold timeout expires without another key being pressed
         };
     };
 
@@ -79,9 +105,9 @@
             label = "base";
             bindings = <
 &kp ESCAPE        &kp Q               &kp W           &kp F         &kp P        &kp B        &kp J        &kp L            &kp U         &kp Y            &kp SQT              &kp ESCAPE
-&kp LSHIFT        &mt LEFT_COMMAND A  &mt LEFT_ALT R  &mt LCTRL S   &mt LSHFT T  &kp G        &kp M        &mt RSHIFT N     &mt RCTRL E   &mt RIGHT_ALT I  &mt RIGHT_COMMAND O  &kp RIGHT_SHIFT
+&kp LSHIFT        &hm LEFT_COMMAND A  &hm LEFT_ALT R  &hm LCTRL S   &hm LSHFT T  &kp G        &kp M        &hm RSHIFT N     &hm RCTRL E   &hm RIGHT_ALT I  &hm RIGHT_COMMAND O  &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &kp Z               &kp X           &kp C         &kp D        &kp V        &kp K        &kp H            &kp COMMA     &kp DOT          &kp SLASH            &kp RCTRL
-                                                      &lt 1 ESCAPE  &lt 2 SPACE  &lt 5 TAB    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DELETE
+                                                      &lt_mod 1 ESCAPE  &lt_mod 2 SPACE  &lt_mod 5 TAB    &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
             >;
         };
 
@@ -91,7 +117,7 @@
 &kp ESC         &trans            &trans        &trans            &trans       &trans       &kp R         &kp M           &kp H              &kp S            &kp V           &kp ESCAPE
 &kp LEFT_SHIFT  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHIFT   &trans       &kp E         &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kt K_PREVIOUS  &kp RIGHT_SHIFT
 &kp RCTRL       &trans            &trans        &trans            &trans       &trans       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4    &kp LCTRL
-                                                &lt 1 ESCAPE      &lt 2 SPACE  &lt 5 TAB    &lt 3 C_STOP  &lt 6 C_PLAY    &lt 4 K_MUTE
+                                                &lt_mod 1 ESCAPE      &lt_mod 2 SPACE  &lt_mod 5 TAB    &lt_mod 3 C_STOP  &lt_mod 6 C_PLAY    &lt_mod 4 K_MUTE
             >;
         };
 
@@ -101,7 +127,7 @@
 &kp ESC         &trans    &trans    &trans        &trans       &trans       &kp K_REDO   &kp K_PASTE      &kp K_COPY      &kp K_CUT     &kp K_UNDO       &kp ESC
 &kp LEFT_SHIFT  &kp LGUI  &kp LALT  &kp LCTRL     &kp LSHFT    &trans       &kp CAPS     &kp LEFT_ARROW   &kt DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RIGHT_SHIFT
 &kp LCTRL       &trans    &trans    &trans        &trans       &trans       &kp INS      &kp HOME         &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp RCTRL
-                                    &lt 1 ESCAPE  &lt 2 SPACE  &lt 5 TAB    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DELETE
+                                    &lt_mod 1 ESCAPE  &lt_mod 2 SPACE  &lt_mod 5 TAB    &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
             >;
         };
 
@@ -111,7 +137,7 @@
 &kp ESC     &kp LBRC   &kp AMPS  &kp STAR                &kp LPAR                 &kp RBRC       &trans       &trans           &trans        &trans    &trans    &kp ESC
 &kp LSHIFT  &kp COLON  &kp DLLR  &kp PRCNT               &kp CARET                &kp PLUS       &trans       &kp RSHFT        &kp RCTRL     &kp RALT  &kp RGUI  &kp RSHFT
 &kp LCTRL   &kp TILDE  &kp EXCL  &kp AT                  &kp HASH                 &kp PIPE       &trans       &trans           &trans        &trans    &trans    &kp RCTRL
-                                 &lt 1 LEFT_PARENTHESIS  &lt 2 RIGHT_PARENTHESIS  &lt 5 UNDER    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DELETE
+                                 &lt_mod 1 LEFT_PARENTHESIS  &lt_mod 2 RIGHT_PARENTHESIS  &lt_mod 5 UNDER    &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
             >;
         };
 
@@ -121,7 +147,7 @@
 &kp ESC     &kp F12  &kp F7  &kp F8     &kp F9       &kp PRINTSCREEN    &trans       &trans           &trans     &trans    &trans    &kp ESC
 &kp LSHIFT  &kp F10  &kp F4  &kp F5     &kp F6       &kp SCROLLLOCK     &trans       &kp RSHFT        &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHIFT
 &kp LCTRL   &kp F10  &kp F1  &kp F2     &kp F3       &kp PAUSE_BREAK    &trans       &trans           &trans     &trans    &trans    &kp RCTRL
-                             &lt 1 ESC  &lt 2 SPACE  &lt 5 TAB          &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DEL
+                             &lt_mod 1 ESC  &lt_mod 2 SPACE  &lt_mod 5 TAB          &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DEL
             >;
         };
 
@@ -131,7 +157,7 @@
 &kp ESC     &trans    &trans    &trans     &trans       &trans       &kp K_REDO  &kp K_PASTE     &kp K_COPY       &kp K_CUT     &kp K_UNDO      &kp ESC
 &kp LSHIFT  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT    &trans       &trans      &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_UP  &mmv MOVE_LEFT  &kp RSHIFT
 &kp LCTRL   &trans    &trans    &trans     &trans       &trans       &trans      &trans          &trans           &trans        &trans          &kp RCTRL
-                                &lt 1 ESC  &lt 2 SPACE  &lt 5 TAB    &mkp RCLK   &mkp LCLK       &msc MOVE_X(15)
+                                &lt_mod 1 ESC  &lt_mod 2 SPACE  &lt_mod 5 TAB    &mkp RCLK   &mkp LCLK       &msc MOVE_X(15)
             >;
         };
 
@@ -141,7 +167,7 @@
 &kp ESC     &kp LBKT   &kp N7  &kp N8     &kp N9    &kp RBKT       &trans       &trans           &trans     &trans    &trans    &kp ESC
 &kp LSHIFT  &kp SEMI   &kp N4  &kp N5     &kp N6    &kp EQUAL      &trans       &kp RSHFT        &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHIFT
 &kp LCTRL   &kp GRAVE  &kp N1  &kp N2     &kp N3    &kp BSLH       &trans       &trans           &trans     &trans    &trans    &kp RCTRL
-                               &lt 1 DOT  &lt 2 N0  &lt 5 MINUS    &lt 3 ENTER  &lt 6 BACKSPACE  &lt 4 DEL
+                               &lt_mod 1 DOT  &lt_mod 2 N0  &lt_mod 5 MINUS    &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DEL
             >;
         };
     };
