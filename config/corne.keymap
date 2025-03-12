@@ -134,10 +134,10 @@
         symbols_layer {
             label = "symb";
             bindings = <
-&kp ESC     &kp LBRC   &kp AMPS  &kp STAR                &kp LPAR                 &kp RBRC       &trans       &trans           &trans        &trans    &trans    &kp ESC
-&kp LSHIFT  &kp COLON  &kp DLLR  &kp PRCNT               &kp CARET                &kp PLUS       &trans       &kp RSHFT        &kp RCTRL     &kp RALT  &kp RGUI  &kp RSHFT
-&kp LCTRL   &kp TILDE  &kp EXCL  &kp AT                  &kp HASH                 &kp PIPE       &trans       &trans           &trans        &trans    &trans    &kp RCTRL
-                                 &lt_mod 1 LEFT_PARENTHESIS  &lt_mod 2 RIGHT_PARENTHESIS  &lt_mod 5 UNDER    &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
+&kp ESC     &kp LEFT_BRACE  &kp AMPERSAND  &kp ASTERISK            &kp LEFT_PARENTHESIS     &kp RIGHT_BRACE   &trans       &trans           &trans        &trans    &trans    &kp ESC
+&kp LSHIFT  &kp COLON       &kp DOLLAR     &kp PERCENT             &kp CARET                &kp PLUS          &trans       &kp RSHFT        &kp RCTRL     &kp RALT  &kp RGUI  &kp RSHFT
+&kp LCTRL   &kp TILDE       &kp EXCL       &kp AT_SIGN             &kp HASH                 &kp PIPE          &trans       &trans           &trans        &trans    &trans    &kp RCTRL
+                                           &lt_mod 1 LEFT_PARENTHESIS  &lt_mod 2 RIGHT_PARENTHESIS  &lt_mod 5 UNDERSCORE  &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
             >;
         };
 
