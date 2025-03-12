@@ -134,10 +134,10 @@
         symbols_layer {
             label = "symb";
             bindings = <
-&kp ESC     &kp LEFT_BRACE  &kp AMPERSAND  &kp ASTERISK            &kp LEFT_PARENTHESIS     &kp RIGHT_BRACE   &trans       &trans           &trans        &trans    &trans    &kp ESC
-&kp LSHIFT  &kp COLON       &kp DOLLAR     &kp PERCENT             &kp CARET                &kp PLUS          &trans       &kp RSHFT        &kp RCTRL     &kp RALT  &kp RGUI  &kp RSHFT
-&kp LCTRL   &kp TILDE       &kp EXCL       &kp LS(N2)              &kp HASH                 &kp PIPE          &trans       &trans           &trans        &trans    &trans    &kp RCTRL
-                                           &lt_mod 1 LEFT_PARENTHESIS  &lt_mod 2 RIGHT_PARENTHESIS  &lt_mod 5 UNDERSCORE  &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
+&kp ESC     &kp LS(LBKT)  &kp LS(N7)  &kp LS(N8)              &kp LS(N9)              &kp LS(RBKT)    &trans       &trans           &trans        &trans    &trans    &kp ESC
+&kp LSHIFT  &kp LS(SEMI)  &kp LS(N4)  &kp LS(N5)              &kp LS(N6)              &kp PLUS        &trans       &kp RSHFT        &kp RCTRL     &kp RALT  &kp RGUI  &kp RSHFT
+&kp LCTRL   &kp LS(GRAVE) &kp LS(N1)  &kp LS(N2)              &kp LS(N3)              &kp LS(BSLH)    &trans       &trans           &trans        &trans    &trans    &kp RCTRL
+                                      &lt_mod 1 LS(N9)        &lt_mod 2 LS(N0)        &lt_mod 5 LS(MINUS)  &lt_mod 3 ENTER  &lt_mod 6 BACKSPACE  &lt_mod 4 DELETE
             >;
         };
 
