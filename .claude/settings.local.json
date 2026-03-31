@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh run list --limit 3)",
+      "mcp__github-gianghoang9912__search_repositories",
+      "Bash(gh auth status)",
+      "Bash(git add config/corne.keymap && git commit -m \"fix: comment out led_strip block to fix build\")",
+      "Bash(git push origin main)",
+      "Bash(git pull origin main)",
+      "Bash(git pull --rebase origin main)",
+      "mcp__github-gianghoang9912__search_code",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:zmk.dev)",
+      "Bash(git add build.yaml && git commit -m \"fix: update board name to nice_nano@v2 for zephyr 3.5+\")",
+      "Bash(git add build.yaml && git commit -m \"fix: update board name to nice_nano@v2.0.0 for zephyr semver requirements\" && git push origin main)",
+      "Bash(git add build.yaml && git commit -m \"fix: update board name to nice_nano@2.0.0 \\(remove v\\)\" && git push origin main)",
+      "Bash(git add config/corne.conf && git commit -m \"chore: temporarily disable OLED display to debug crashes\" && git push origin main)",
+      "Bash(git add config/corne.conf && git commit -m \"fix: re-enable OLED widgets \\(pin, bluetooth\\) but keep ext_power off to prevent crash\" && git push origin main)",
+      "Bash(git push)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "filesystem",
+    "github-gianghoang9912",
+    "github-stitchg1612",
+    "google-search",
+    "memory",
+    "puppeteer",
+    "figma-desktop"
+  ]
+}
